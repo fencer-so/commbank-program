@@ -179,7 +179,7 @@ export function GoalManager(props: Props) {
 ## Display The Icon When It Is Available
 
 ```ts
-// GoalModal.tsx
+// GoalManager.tsx
 
 type GoalIconContainerProps = { shouldShow: boolean }
 
@@ -203,7 +203,7 @@ export function GoalManager(props: Props) {
 ## Open The Emoji Picker On Click
 
 ```ts
-// GoalModal.tsx
+// GoalManager.tsx
 
 type GoalIconContainerProps = { shouldShow: boolean }
 
