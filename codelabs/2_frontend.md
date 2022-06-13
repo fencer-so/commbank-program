@@ -1,6 +1,4 @@
-# Frontend
-
-## Update The Goal Model
+# Update The Goal Model
 
 ```ts
 // types.ts
@@ -10,7 +8,7 @@ export interface Goal {
 }
 ```
 
-## Update The Card Component
+# Update The Card Component
 
 ```ts
 // GoalCard.tsx
@@ -39,15 +37,15 @@ export default function GoalCard(props: Props) {
 }
 ```
 
-## Wire In Emoji Picker
+# Implement Emoji Picker
 
-### Install `EmojiMart` @[v3.0.1](https://github.com/missive/emoji-mart/tree/v3.0.1)
+## Install `EmojiMart` @[v3.0.1](https://github.com/missive/emoji-mart/tree/v3.0.1)
 
 ```shell
 npm install --save emoji-mart@3.0.1
 ```
 
-### Create Reusable Component
+## Create Reusable Wrapper
 
 ```ts
 // EmojiPicker.tsx
@@ -74,7 +72,7 @@ export default function EmojiPicker(props: Props) {
 }
 ```
 
-### Display Emoji Picker Conditionally
+## Display Emoji Picker Conditionally
 
 ```ts
 // GoalManager.tsx
@@ -114,7 +112,7 @@ const EmojiPickerContainer = styled.div<EmojiPickerContainerProps>`
 `
 ```
 
-### Implement On Click
+## Implement On Click Event Handler
 
 ```ts
 const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
@@ -137,14 +135,16 @@ const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
 }
 ```
 
-## Update The Goal Manager
+# Update The Goal Manager
+
+## Requirements
 
 - [ ] User can add icon
 - [ ] User can change icon
 
-### `Case 1`: Goal Has No Icon
+## `Case 1`: Goal Has No Icon
 
-#### Add An `AddIcon` Button That Is Only Visible When There Is No Icon
+## Add An `AddIcon` Button That Is Only Visible When There Is No Icon
 
 ```ts
 // GoalManager.tsx
@@ -174,9 +174,9 @@ export function GoalManager(props: Props) {
 }
 ```
 
-#### `Case 2`: Goal Has Icon
+## `Case 2`: Goal Has Icon
 
-#### Display The Icon When It Is Available
+## Display The Icon When It Is Available
 
 ```ts
 // GoalModal.tsx
@@ -200,7 +200,7 @@ export function GoalManager(props: Props) {
 }
 ```
 
-#### Open The Emoji Picker On Click
+## Open The Emoji Picker On Click
 
 ```ts
 // GoalModal.tsx
