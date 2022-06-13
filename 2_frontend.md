@@ -18,11 +18,11 @@ export default function GoalCard(props: Props) {
 
   const goal = useAppSelector(selectGoalsMap)[props.id]
 
-  const onClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    dispatch(setContent(goal))
-    dispatch(setType('Goal'))
-    dispatch(setIsOpen(true))
+  const onClick = (event: React.MouseEvent) => {
+    event.stopPropagation()
+    dispatch(setContentRedux(goal))
+    dispatch(setTypeRedux('Goal'))
+    dispatch(setIsOpenRedux(true))
   }
 
   const asLocaleDateString = (date: Date) => new Date(date).toLocaleDateString()
@@ -61,17 +61,17 @@ export function GoalManager(props: Props) {
     const hasIcon = () => icon != null
     
     const addIconOnClick = (event: React.MouseEvent) => {
-        event.stopPropagation()
-        setEmojiPickerIsOpen(true)
+      event.stopPropagation()
+      setEmojiPickerIsOpen(true)
     }
 
     return (
-        <AddIconButtonContainer hasIcon={hasIcon()}>
-          <TransparentButton onClick={addIconOnClick}>
-            <FontAwesomeIcon icon={faSmile} size="2x" />
-            <AddIconButtonText>Add icon</AddIconButtonText>
-          </TransparentButton>
-        </AddIconButtonContainer>
+      <AddIconButtonContainer hasIcon={hasIcon()}>
+        <TransparentButton onClick={addIconOnClick}>
+          <FontAwesomeIcon icon={faSmile} size="2x" />
+          <AddIconButtonText>Add icon</AddIconButtonText>
+        </TransparentButton>
+      </AddIconButtonContainer>
     )
 }
 
