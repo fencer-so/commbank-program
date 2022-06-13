@@ -1,6 +1,6 @@
 # Background
 
-## In Task 1 you implemented this enpoint:
+## In Task 1 you implemented this endpoint:
 
 ```cs
     [HttpPut("{id:length(24)}")]
