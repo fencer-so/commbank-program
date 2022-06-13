@@ -58,6 +58,10 @@ export function GoalManager(props: Props) {
 
     const [icon, setIcon] = useState<string | null>(null)
 
+    useEffect(() => {
+      setIcon(props.goal.iconName)
+    }, [props.goal.id, props.goal.iconName])
+
     const hasIcon = () => icon != null
     
     const addIconOnClick = (event: React.MouseEvent) => {
