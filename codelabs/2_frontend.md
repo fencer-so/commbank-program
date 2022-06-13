@@ -43,8 +43,6 @@ export default function GoalCard(props: Props) {
 
 ### Install `EmojiMart` @[v3.0.1](https://github.com/missive/emoji-mart/tree/v3.0.1)
 
-> ⚠️ **v5.1.0 HAS BREAKING CHANGE:** USE v3.0.1
-
 ```shell
 npm install --save emoji-mart@3.0.1
 ```
@@ -86,23 +84,13 @@ export function GoalManager(props: Props) {
 
   const hasIcon = () => icon != null
 
-  const pickEmojiOnClick = () => (emoji: BaseEmoji, event: MouseEvent) => {
-    event.stopPropagation()
-
-    setIcon(emoji.native)
-    setEmojiPickerIsOpen(false)
-
-    const updatedGoal: Goal = {
-      ...props.goal,
-      iconName: emoji.native ?? props.goal.iconName,
-      name: name ?? props.goal.name,
-      targetDate: targetDate ?? props.goal.targetDate,
-      targetAmount: targetAmount ?? props.goal.targetAmount,
-    }
-
-    dispatch(updateGoalRedux(updatedGoal))
-
-    updateGoalApi(props.goal.id, updatedGoal)
+  const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
+    // TODO(stop event propogation)
+    // TODO(set icon locally)
+    // TODO(close emoji picker)
+    // TODO(create updated goal)
+    // TODO(update store)
+    // TODO(update database)
   }
 
   return (
@@ -126,7 +114,33 @@ const EmojiPickerContainer = styled.div<EmojiPickerContainerProps>`
 `
 ```
 
+### Implement On Click
+
+```ts
+const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
+  event.stopPropagation()
+
+  setIcon(emoji.native)
+  setEmojiPickerIsOpen(false)
+
+  const updatedGoal: Goal = {
+    ...props.goal,
+    iconName: emoji.native ?? props.goal.iconName,
+    name: name ?? props.goal.name,
+    targetDate: targetDate ?? props.goal.targetDate,
+    targetAmount: targetAmount ?? props.goal.targetAmount,
+  }
+
+  dispatch(updateGoalRedux(updatedGoal))
+
+  updateGoalApi(props.goal.id, updatedGoal)
+}
+```
+
 ## Update The Goal Manager
+
+- [ ] User can add icon
+- [ ] User can change icon
 
 ### `Case 1`: Goal Has No Icon
 
@@ -166,4 +180,46 @@ export function GoalManager(props: Props) {
 
 ```ts
 // GoalModal.tsx
+
+type GoalIconContainerProps = { shouldShow: boolean }
+
+const GoalIconContainer = styled.div<GoalIconContainerProps>`
+  display: ${(props) => (props.shouldShow ? 'flex' : 'none')};
+`
+
+export function GoalManager(props: Props) {
+  const hasIcon = () => icon != null
+
+  const goal = useAppSelector(selectGoalsMap)[props.goal.id]
+
+  return (
+    <GoalIconContainer shouldShow={hasIcon()}>
+      <GoalIcon icon={goal.iconName} />
+    </GoalIconContainer>
+  )
+}
+```
+
+#### Open The Emoji Picker On Click
+
+```ts
+// GoalModal.tsx
+
+type GoalIconContainerProps = { shouldShow: boolean }
+
+const GoalIconContainer = styled.div<GoalIconContainerProps>`
+  display: ${(props) => (props.shouldShow ? 'flex' : 'none')};
+`
+
+export function GoalManager(props: Props) {
+  const hasIcon = () => icon != null
+
+  const goal = useAppSelector(selectGoalsMap)[props.goal.id]
+
+  return (
+    <GoalIconContainer shouldShow={hasIcon()}>
+      <GoalIcon icon={goal.iconName} onClick={addIconOnClick} />
+    </GoalIconContainer>
+  )
+}
 ```
