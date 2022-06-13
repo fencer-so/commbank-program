@@ -90,7 +90,7 @@ public class Goal
     [BsonRepresentation(BsonType.ObjectId)]
     public List<string>? TagIds { get; set; }
 
-    public string? IconName { get; set; }
+    public string? Icon { get; set; }
 }
 ```
 
@@ -220,7 +220,7 @@ public class GoalController : ControllerBase
             return NotFound();
         }
 
-        goal.IconName = updatedIcon.IconName;
+        goal.Icon = updatedIcon.Icon;
 
         await _goalsService.UpdateAsync(id, goal);
 

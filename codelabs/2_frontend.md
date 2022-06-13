@@ -4,7 +4,7 @@
 // types.ts
 
 export interface Goal {
-  iconName: string
+  icon: string
 }
 ```
 
@@ -31,7 +31,7 @@ export default function GoalCard(props: Props) {
     <Container key={goal.id} onClick={onClick}>
       <TargetAmount>${goal.targetAmount}</TargetAmount>
       <TargetDate>{asLocaleDateString(goal.targetDate)}</TargetDate>
-      <Icon>{goal.iconName}</Icon>
+      <Icon>{goal.icon}</Icon>
     </Container>
   )
 }
@@ -123,7 +123,7 @@ const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
 
   const updatedGoal: Goal = {
     ...props.goal,
-    iconName: emoji.native ?? props.goal.iconName,
+    icon: emoji.native ?? props.goal.icon,
     name: name ?? props.goal.name,
     targetDate: targetDate ?? props.goal.targetDate,
     targetAmount: targetAmount ?? props.goal.targetAmount,
@@ -153,8 +153,8 @@ export function GoalManager(props: Props) {
   const [icon, setIcon] = useState<string | null>(null)
 
   useEffect(() => {
-    setIcon(props.goal.iconName)
-  }, [props.goal.id, props.goal.iconName])
+    setIcon(props.goal.icon)
+  }, [props.goal.id, props.goal.icon])
 
   const hasIcon = () => icon != null
 
@@ -194,7 +194,7 @@ export function GoalManager(props: Props) {
 
   return (
     <GoalIconContainer shouldShow={hasIcon()}>
-      <GoalIcon icon={goal.iconName} />
+      <GoalIcon icon={goal.icon} />
     </GoalIconContainer>
   )
 }
@@ -218,7 +218,7 @@ export function GoalManager(props: Props) {
 
   return (
     <GoalIconContainer shouldShow={hasIcon()}>
-      <GoalIcon icon={goal.iconName} onClick={addIconOnClick} />
+      <GoalIcon icon={goal.icon} onClick={addIconOnClick} />
     </GoalIconContainer>
   )
 }
