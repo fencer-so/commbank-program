@@ -1,5 +1,7 @@
 # Backend
+
 ## Fork rSERVER
+
 - [ ] Fork https://github.com/fencer-so/commbank-server
 - [ ] Clone your forked repository
 
@@ -8,6 +10,7 @@ $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 ```
 
 ## Create A MongoDB Cluster
+
 - [ ] Register at https://www.mongodb.com/cloud/atlas/register
 - [ ] Click the “Create” button
 - [ ] Select “Shared” cluster
@@ -16,6 +19,7 @@ $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 - [ ] Click “Create Cluster”
 
 ## Create A Database User
+
 - [ ] Navigate to “Database Access”
 - [ ] Click “Add New Database User”
 - [ ] Select “Password” as authentication method
@@ -25,6 +29,7 @@ $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 - [ ] Click “Add User”
 
 ## Connect Server With The Database
+
 - [ ] Navigate to “Database Deployments”
 - [ ] Click “Connect”
 - [ ] Click “Connect Your Application”
@@ -92,6 +97,7 @@ public class Goal
 ## Add The Goal Service
 
 ### Add The Goal Service Interface
+
 ```cs
 using CommBank.Models;
 
@@ -109,6 +115,7 @@ namespace CommBank.Services
 ```
 
 ### Add The Goal Service
+
 ```cs
 using Microsoft.Extensions.Options;
 using CommBank.Models;
@@ -143,6 +150,7 @@ public class GoalsService : IGoalsService
 ```
 
 ## Add The Goal Controller
+
 ```cs
 using Microsoft.AspNetCore.Mvc;
 using CommBank.Services;
@@ -237,6 +245,7 @@ public class GoalController : ControllerBase
 ```
 
 ## Inject The Goal Service
+
 ```cs
 // Program.cs
 
