@@ -131,7 +131,7 @@ const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
 
   dispatch(updateGoalRedux(updatedGoal))
 
-  updateGoalApi(props.goal.id, updatedGoal)
+  // TODO(update database)
 }
 ```
 
