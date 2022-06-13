@@ -7,7 +7,7 @@
 $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 ```
 
-## Create a MongoDB Cluster
+## Create A MongoDB Cluster
 - [ ] Register at https://www.mongodb.com/cloud/atlas/register
 - [ ] Click the “Create” button
 - [ ] Select “Shared” cluster
@@ -15,7 +15,7 @@ $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 - [ ] Select the recommended region (It will have a star)
 - [ ] Click “Create Cluster”
 
-## Create a Database User
+## Create A Database User
 - [ ] Navigate to “Database Access”
 - [ ] Click “Add New Database User”
 - [ ] Select “Password” as authentication method
@@ -24,7 +24,7 @@ $ git clone https://github.com/{YOUR_USERNAME}/commbank-server
 - [ ] Save the generated password in your password manager (e.g., LastPass)
 - [ ] Click “Add User”
 
-## Connect Server with the Database
+## Connect Server With The Database
 - [ ] Navigate to “Database Deployments”
 - [ ] Click “Connect”
 - [ ] Click “Connect Your Application”
@@ -52,7 +52,7 @@ var mongoClient = new MongoClient(builder.Configuration.GetConnectionString("Com
 var mongoDatabase = mongoClient.GetDatabase("CommBank");
 ```
 
-## Add the Goal Model
+## Add The Goal Model
 
 ```cs
 using MongoDB.Bson;
@@ -89,9 +89,9 @@ public class Goal
 }
 ```
 
-## Add the Goal Service
+## Add The Goal Service
 
-### Add the Interface
+### Add The Goal Service Interface
 ```cs
 using CommBank.Models;
 
@@ -108,7 +108,7 @@ namespace CommBank.Services
 }
 ```
 
-### Add the Class
+### Add The Goal Service
 ```cs
 using Microsoft.Extensions.Options;
 using CommBank.Models;
@@ -142,7 +142,7 @@ public class GoalsService : IGoalsService
 }
 ```
 
-## Add the Goal Controller
+## Add The Goal Controller
 ```cs
 using Microsoft.AspNetCore.Mvc;
 using CommBank.Services;
@@ -236,7 +236,7 @@ public class GoalController : ControllerBase
 }
 ```
 
-## Inject the Goal Service
+## Inject The Goal Service
 ```cs
 // Program.cs
 
