@@ -9,6 +9,8 @@
 // GoalManager.tsx
 
 export function GoalManager(props: Props) {
+  // ...
+
   const [icon, setIcon] = useState<string | null>(null)
 
   useEffect(() => {
@@ -23,12 +25,14 @@ export function GoalManager(props: Props) {
   }
 
   return (
+    {/* ... */}
     <AddIconButtonContainer hasIcon={hasIcon()}>
       <TransparentButton onClick={addIconOnClick}>
         <FontAwesomeIcon icon={faSmile} size="2x" />
         <AddIconButtonText>Add icon</AddIconButtonText>
       </TransparentButton>
     </AddIconButtonContainer>
+    {/* ... */}
   )
 }
 ```
@@ -40,6 +44,21 @@ export function GoalManager(props: Props) {
   - [ ] Opens the emoji picker component
 
 ```ts
+// GoalIcon.tsx
+
+const Icon = styled.h1`
+  font-size: 6rem;
+  cursor: pointer;
+`
+
+export default function GoalIcon(props: Props) {
+  return (
+    <TransparentButton onClick={props.onClick}>
+      <Icon>{props.icon}</Icon>
+    </TransparentButton>
+  )
+}
+
 // GoalManager.tsx
 
 type GoalIconContainerProps = { shouldShow: boolean }
@@ -49,14 +68,18 @@ const GoalIconContainer = styled.div<GoalIconContainerProps>`
 `
 
 export function GoalManager(props: Props) {
+  // ...
+
   const hasIcon = () => icon != null
 
   const goal = useAppSelector(selectGoalsMap)[props.goal.id]
 
   return (
+    {/* ... */}
     <GoalIconContainer shouldShow={hasIcon()}>
       <GoalIcon icon={goal.icon} onClick={addIconOnClick} />
     </GoalIconContainer>
+    {/* ... */}
   )
 }
 ```
