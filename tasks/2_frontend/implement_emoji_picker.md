@@ -6,7 +6,9 @@
 npm install emoji-mart@3.0.1
 ```
 
-- [ ] Create a reusable wrapper that uses `theme` mode from Redux store
+- [ ] Create a reusable wrapper that:
+  - [ ] Uses `mode` from Redux `themeSlice`
+  - [ ] Takes an `onClick` event handler with params: `(emoji: BaseEmoji, event: React.MouseEvent) => void`
 
 ```ts
 import { BaseEmoji, Picker } from 'emoji-mart'
@@ -56,7 +58,7 @@ export function GoalManager(props: Props) {
     // TODO(TASK-2) Stop event propogation
     // TODO(TASK-2) Set icon locally
     // TODO(TASK-2) Close emoji picker
-    // TODO(TASK-2) Create updated goal
+    // TODO(TASK-2) Create updated goal locally
     // TODO(TASK-2) Update Redux store
     // TODO(TASK-3) Update database
   }
@@ -77,7 +79,12 @@ export function GoalManager(props: Props) {
 }
 ```
 
-- [ ] Implement the `pickEmojiOnClick` event handler
+- [ ] Implement the `pickEmojiOnClick` event handler:
+  - [ ] Stop event propogation
+  - [ ] Set icon locally
+  - [ ] Close emoji picker
+  - [ ] Create updated goal locally
+  - [ ] Update Redux store
 
 ```ts
 const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
