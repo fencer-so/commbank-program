@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --config .prettierrc 'codelabs/*.md' --write"
+    "format": "prettier --config .prettierrc 'codelabs/*.md' 'tasks/*/**' --write"
   },
   "repository": {
     "type": "git",
