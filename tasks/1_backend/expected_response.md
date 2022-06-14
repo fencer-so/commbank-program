@@ -1,0 +1,5 @@
+# Expected Response
+
+```json
+{}
+```

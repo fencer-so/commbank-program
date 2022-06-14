@@ -1,4 +1,5 @@
 # Create A Database User
+
 - [ ] Navigate to “Database Access”
 - [ ] Click “Add New Database User”
 - [ ] Select “Password” as authentication method

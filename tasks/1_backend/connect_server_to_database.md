@@ -1,4 +1,5 @@
 # Connect Server To Database
+
 - [ ] Navigate to “Database Deployments”
 - [ ] Click “Connect”
 - [ ] Click “Connect Your Application”
@@ -11,8 +12,8 @@
 // Secrets.json
 
 {
-    "ConnectionStrings": {
-        "CommBank": "{CONNECTION_STRING}"
-    }
+  "ConnectionStrings": {
+    "CommBank": "{CONNECTION_STRING}"
+  }
 }
 ```
