@@ -33,9 +33,7 @@ export default function EmojiPicker(props: Props) {
 }
 ```
 
-- [ ] Display the emoji picker when user clicks:
-  - [ ] `Icon` emoji
-  - [ ] `Add icon` button
+- [ ] Display the emoji picker based on `useState` hook
 
 ```ts
 // GoalManager.tsx
