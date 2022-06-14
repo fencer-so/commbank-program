@@ -10,7 +10,7 @@
   "created": "2022-06-11T01:53:10.857Z",
   "transactionIds": null,
   "tagIds": null,
-  "icon": "🏡",
+  "icon": "🤺",
   "userId": "62a29c15f4605c4c9fa7f306"
 }
 ```
