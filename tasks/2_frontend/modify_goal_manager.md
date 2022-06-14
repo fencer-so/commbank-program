@@ -1,7 +1,8 @@
 # Modify The Goal Manager So Users Can Add And Change Icons
 
-- [ ] Add an `AddIcon` button that:
+- [ ] Add an `Add icon` component that:
   - [ ] Is only visible when there is no icon
+  - [ ] Uses `TransparentButton` component
   - [ ] Opens the emoji picker component
 
 ```ts
@@ -35,6 +36,7 @@ export function GoalManager(props: Props) {
 - [ ] Add an `Icon` component that:
   - [ ] Is only visible when there is an icon
   - [ ] Uses `TransparentButton` component
+  - [ ] Displays the icon with `font-size: 5.5rem;`
   - [ ] Opens the emoji picker component
 
 ```ts
