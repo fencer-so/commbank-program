@@ -31,7 +31,9 @@ export default function EmojiPicker(props: Props) {
 }
 ```
 
-- [ ] Display the emoji picker on the `GoalManager` when user clicks the `Icon` emoji or `Add icon` button
+- [ ] Display the emoji picker when user clicks
+  - [ ] `Icon` emoji
+  - [ ] `Add icon` button
 
 ```ts
 // GoalManager.tsx
@@ -75,7 +77,7 @@ export function GoalManager(props: Props) {
 }
 ```
 
-- [ ] Implement the `pickEmojiOnClick` on click event handler
+- [ ] Implement the `pickEmojiOnClick` event handler
 
 ```ts
 const pickEmojiOnClick = (emoji: BaseEmoji, event: MouseEvent) => {
