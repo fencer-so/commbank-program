@@ -31,7 +31,7 @@ export default function EmojiPicker(props: Props) {
 }
 ```
 
-- [ ] Display the emoji picker when user clicks
+- [ ] Display the emoji picker when user clicks:
   - [ ] `Icon` emoji
   - [ ] `Add icon` button
 
