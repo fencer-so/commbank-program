@@ -10,6 +10,11 @@
 
 ```json
 // Secrets.json
+var settings = MongoClientSettings.FromConnectionString("mongodb+srv://samyatiwari:<password>@cluster0.bvp10gl.mongodb.net/?retryWrites=true&w=majority");
+settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+var client = new MongoClient(settings);
+var database = client.GetDatabase("test");
+
 
 {
   "ConnectionStrings": {
